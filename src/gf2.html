@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Cake Product Page</title>
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          color: #4a2f27;
+          padding: 20px 40px;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          background: white;
+        }
+
+        .main-section {
+          display: flex;
+          gap: 50px;
+          justify-content: space-between;
+          height: 450px;
+          background: #fffefb;
+          border-radius: 24px;
+          box-shadow: 0 12px 25px rgb(74 47 39 / 0.15);
+          overflow: hidden;
+          flex-wrap: wrap;
+          padding: 20px;
+
+        }
+
+     .image-section,
+    .details-section,
+    .reviews-section {
+      background: #fffefb;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(107, 46, 19, 0.1);
+      flex: 1 1 300px;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Remove border specifically for image-section */
+    .image-section {
+      border: none;
+    }
+
+
+    <!--    .image-section:hover,-->
+    <!--    .details-section:hover,-->
+    <!--    .reviews-section:hover {-->
+    <!--      box-shadow: 0 12px 30px rgba(107, 46, 19, 0.2);-->
+    <!--      transform: translateY(-5px);-->
+    <!--    }-->
+
+        .main-cake-img {
+          width: 610px;
+          height: 350px;
+          max-height: 400px;
+          object-fit: cover;
+          border-radius: 18px;
+    <!--      border: 6px solid #d97f5f;-->
+          transition: transform 0.3s ease;
+          cursor: pointer;
+        }
+
+
+
+        .details-section h2 {
+         color: #5c3317;
+          font-size: 30px;
+          margin-bottom: 14px;
+          font-weight: 700;
+          letter-spacing: 0.05em;
+          text-transform: capitalize;
+        }
+
+        .details-section p {
+          font-size: 17px;
+          line-height: 1.4;
+          margin: 10px 0;
+          color: #613d32;
+        }
+
+        .buttons {
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+          margin-top: 18px;
+        }
+
+        .buttons button {
+          width: 100%;
+          padding: 14px 0;
+          background: linear-gradient(90deg, #d97f5f, #b14a2f);
+          color: #fff9f2;
+          border: none;
+          border-radius: 14px;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          box-shadow: 0 6px 12px rgb(177 74 47 / 0.6);
+          transition: background 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .buttons button:hover {
+          background: linear-gradient(90deg, #b14a2f, #d97f5f);
+          box-shadow: 0 10px 20px rgb(217 127 95 / 0.8);
+        }
+
+        .reviews-section h3 {
+         color: #5c3317;
+
+           font-size: 30px;
+          margin-bottom: 18px;
+          text-align: center;
+          font-weight: 700;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+        }
+
+        .review {
+          background: #fff9f2;
+          padding: 14px 20px;
+          margin-bottom: 12px;
+          border-left: 6px solid #d97f5f;
+          border-right: 6px solid #d97f5f;
+          border-radius: 14px;
+          box-shadow: 0 2px 6px rgb(217 127 95 / 0.3);
+          color: #603c2d;
+          font-weight: 500;
+          font-size: 15px;
+          line-height: 1.35;
+          transition: transform 0.2s ease;
+        }
+
+        .review:hover {
+          transform: scale(1.03);
+          box-shadow: 0 8px 18px rgb(217 127 95 / 0.45);
+        }
+
+        .review strong {
+          display: block;
+          color: #a6543f;
+          margin-bottom: 6px;
+          font-weight: 700;
+        }
+
+        .similar-section {
+          margin-top: 20px;
+          padding: 10px 0;
+        }
+        .similar-section {
+      text-align: center; /* Centers the h3 inside */
+      margin-bottom: 0;
+    }
+
+
+    <!--.similar-section h3 {-->
+    <!--  font-size: 28px;-->
+    <!--  color: #5c3317;-->
+    <!--  background: #fffefb;-->
+    <!--  display: inline-block;-->
+    <!--  padding: 14px 38px;-->
+    <!--  border-radius: 16px;-->
+    <!--  letter-spacing: 0.06em;-->
+    <!--  font-weight: 700;-->
+    <!--  box-shadow: 0 6px 16px rgba(166, 84, 63, 0.7);-->
+    <!--  margin-top: 0 auto 70px; /* centers the block */-->
+    <!--}-->
+    .similar-section h3 {
+      font-size: 28px;
+      color: #5c3317;
+      background: #fffefb;
+      display: block; /* change from inline-block to block */
+      padding: 14px 38px;
+      border-radius: 16px;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      box-shadow: 0 6px 16px rgba(166, 84, 63, 0.7);
+      margin: 0 auto 50px;
+      width: fit-content; /* shrink to content */
+      text-align: center;
+    }
+
+
+        .similar-items {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 24px;
+          padding: 0 10px;
+          justify-items: center;
+
+        }
+
+        .similar-card {
+          background: #fffefb;
+          border-radius: 18px;
+          overflow: hidden;
+          padding: 10px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          box-shadow: 0 4px 10px rgba(107, 46, 19, 0.15);
+          border: 2px solid #ffe2c6;
+          width: 100%;
+          max-width: 280px;
+        }
+
+    <!--    .similar-card:hover {-->
+    <!--      transform: translateY(-8px);-->
+    <!--      box-shadow: 0 10px 25px rgba(107, 46, 19, 0.25);-->
+    <!--    }-->
+
+        .similar-card img {
+          width: 100%;
+          height: 220px;
+          object-fit: cover;
+          border-radius: 14px;
+          border: none;
+          transition: transform 0.3s ease;
+        }
+
+        .similar-card img:hover {
+          transform: scale(1.03);
+        }
+
+        @media (max-width: 992px) {
+          body {
+            padding: 20px 16px;
+          }
+
+          .main-section {
+            flex-direction: column;
+          }
+
+          .buttons {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 12px;
+          }
+
+          .buttons button {
+            flex: 1 1 48%;
+          }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Main Section -->
+<div class="main-section">
+    <!-- Image -->
+    <div class="image-section">
+        <img src="g2.jpg" alt="Chocolate Truffle Cake" class="main-cake-img" />
+    </div>
+
+    <!-- Cake Details -->
+    <div class="details-section">
+
+        <h2>Dairy Milk Celebration Bouquet</h2>
+        <p><strong>Price:</strong> ₹599</p>
+        <p><strong>Offer:</strong> Flat ₹100 Off</p>
+        <p><strong>Description:</strong> A cheerful mix of Dairy Milk chocolates arranged like a bouquet, perfect for festive gifting. Wrapped beautifully with colorful paper and perfect for all ages.</p>
+
+
+        <div class="buttons">
+            <button>Place Order</button>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Reviews -->
+    <div class="reviews-section">
+        <h3>Customer Reviews</h3>
+        <div class="review">
+            <strong>Arjun R:</strong> Loved it! Super tasty and delivered fresh. ⭐⭐⭐⭐⭐
+        </div>
+        <div class="review">
+            <strong>Meena P:</strong> Perfect for my anniversary. Soft and rich. ⭐⭐⭐⭐☆
+        </div>
+        <div class="review">
+            <strong>Sandeep K:</strong> My kids loved every bite. Will order again. ⭐⭐⭐⭐⭐
+        </div>
+
+    </div>
+</div>
+
+<!-- Similar Items Section -->
+<!-- Similar Items Section -->
+<!-- Similar Items Section -->
+<div class="similar-section">
+    <h3>Similar Items</h3>
+    <div class="similar-items">
+        <div class="similar-card">
+            <img src="g1.jpg" alt="Cake 1" />
+        </div>
+        <div class="similar-card">
+            <img src="g2.jpg" alt="Cake 2" />
+        </div>
+        <div class="similar-card">
+            <img src="g3.jpg" alt="Cake 3" />
+        </div>
+        <div class="similar-card">
+            <img src="g4.jpg" alt="Cake 4" />
+        </div>
+        <div class="similar-card">
+            <img src="g5.jpg" alt="Cake 5" />
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+</div>
+
+</body>
+</html>

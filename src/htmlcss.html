@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KAFE</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+        body {
+            background-color: rgb(#2C3227);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #8B4513 !important; /* brown */
+            font-size: 1.5rem;
+        }
+
+        .navbar-brand img {
+            margin-right: 8px;
+        }
+
+      ox-shadow: 0 4px 10px rgba(107, 46, 19, 0.08);
+}
+.quick-icons {
+ margin: 20px auto;
+   max-width: 1450px;
+  background: #fffefb;
+  max-width: 1450px;
+  padding: 20px 10px; /* Reduced padding */
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(107, 46, 19, 0.1);
+<!--  margin-top: 20px;-->
+}
+
+.icon-link {
+gap:20px;
+  height: 90px;              /* reduced height */
+  width: 100%;               /* full width of its col */
+  display: block;
+  text-decoration: none;
+  color: #8B4513;
+  background: #fff;
+  border-radius: 16px;
+  padding: 12px 5px;         /* tighter padding */
+  transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(107, 46, 19, 0.08);
+}
+
+.icon-link i {
+  font-size: 1.2rem;         /* smaller icon */
+}
+
+.icon-link:hover {
+  transform: translateY(-6px);
+  color: #a6543f;
+  box-shadow: 0 6px 18px rgba(166, 84, 63, 0.25);
+}
+
+.icon-label {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+
+
+        h1.section-title {
+            text-align: center;
+            color: #8B4513;
+            margin: 40px 0 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 0 15px 40px;
+        }
+
+       .card {
+    background: #fffefb;
+    border-radius: 18px;
+    overflow: hidden;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(107, 46, 19, 0.15);
+    border: 2px solid #ffe2c6;
+    width: 100%;
+    max-width: 280px;
+}
+
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+.card-img-top {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.card-img-top:hover {
+    transform: scale(1.03);
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(107, 46, 19, 0.25);
+}
+
+
+        .card-body {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            color: #5c3317;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #8B4513;
+            line-height: 1.4;
+        }
+
+ .carousel-inner img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+
+        @media (max-width: 576px) {
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg shadow-sm sticky-top" style="background-color:white;">
+    <div class="container" >
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img
+                    src="https://tse1.mm.bing.net/th/id/OIP.PCAz6ksv26V59Zy1sgK3YQHaID?pid=Api&P=0&h=180"
+                    alt="KAFE Logo"
+                    width="35"
+                    height="28"
+                    class="d-inline-block align-text-top"
+            />
+            KAFE
+        </a>
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+                class="collapse navbar-collapse"
+                id="navbarSupportedContent"
+        >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a
+                            class="nav-link active"
+                            aria-current="page"
+                            href="#"
+                    >Home</a
+                    >
+                </li>
+                <li class="nav-item dropdown">
+                    <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                    >
+                        Choice
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#cakes">Cake</a></li>
+                        <li><a class="dropdown-item" href="#coffee">Coffee</a></li>
+                        <li><a class="dropdown-item" href="#chocolate">Chocolate</a></li>
+                        <li><a class="dropdown-item" href="#gifts">Gift</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex" role="search" onsubmit="event.preventDefault(); alert('Search function not implemented');">
+                <input
+                        class="form-control me-2"
+                        type="search"
+                        placeholder="Search"
+                        aria-label="Search"
+                />
+                <button class="btn btn-outline-success" type="submit">
+                    Search
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!-- Quick Access Icons Section -->
+
+<section class="quick-icons container text-center my-4">
+    <div class="row justify-content-center gy-4">
+        <div class="col-4 col-sm-2">
+            <a href="#cakes" class="icon-link">
+                <i class="fas fa-birthday-cake fa-2x"></i>
+                <div class="icon-label">Cakes</div>
+            </a>
+        </div>
+        <div class="col-4 col-sm-2">
+            <a href="#coffee" class="icon-link">
+                <i class="fas fa-mug-hot fa-2x"></i>
+                <div class="icon-label">Coffee</div>
+            </a>
+        </div>
+        <div class="col-4 col-sm-2">
+            <a href="#chocolate" class="icon-link">
+                <i class="fas fa-cookie-bite fa-2x"></i>
+                <div class="icon-label">Chocolate</div>
+            </a>
+        </div>
+        <div class="col-4 col-sm-2">
+            <a href="#gifts" class="icon-link">
+                <i class="fas fa-gift fa-2x"></i>
+                <div class="icon-label">Gifts</div>
+            </a>
+        </div>
+        <div class="col-4 col-sm-2">
+            <a href="#pastries" class="icon-link">
+                <i class="fas fa-ice-cream fa-2x"></i>
+                <div class="icon-label">Pastries</div>
+            </a>
+        </div>
+
+
+        <div class="col-4 col-sm-2">
+            <a href="#icecream" class="icon-link">
+                <i class="fas fa-ice-cream fa-2x"></i>
+                <div class="icon-label">Ice Cream</div>
+            </a>
+        </div>
+        <div class="col-4 col-sm-2">
+            <a href="#waffles" class="icon-link">
+                <i class="fas fa-egg fa-2x"></i>
+                <div class="icon-label">Waffles</div>
+            </a>
+        </div>
+        <div class="col-4 col-sm-2">
+            <a href="#cookies" class="icon-link">
+                <i class="fas fa-cookie fa-2x"></i>
+                <div class="icon-label">Cookies</div>
+            </a>
+        </div>
+        <div class="col-4 col-sm-2">
+            <a href="#combos" class="icon-link">
+                <i class="fas fa-box-open fa-2x"></i>
+                <div class="icon-label">Combos</div>
+            </a>
+        </div>
+        <div class="col-4 col-sm-2">
+            <a href="#specials" class="icon-link">
+                <i class="fas fa-star fa-2x"></i>
+                <div class="icon-label">Specials</div>
+            </a>
+        </div>
+        <div class="col-4 col-sm-2">
+            <a href="#donuts" class="icon-link">
+                <i class="fas fa-circle-notch fa-2x"></i>
+                <div class="icon-label">Donuts</div>
+            </a>
+        </div>
+        <div class="col-4 col-sm-2">
+            <a href="#smoothies" class="icon-link">
+                <i class="fas fa-blender fa-2x"></i>
+                <div class="icon-label">Smoothies</div>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- Carousel -->
+<div
+        id="carouselExampleAutoplaying"
+        class="carousel slide container-fluid mt-4 px-0"
+
+        data-bs-ride="carousel"
+        data-bs-interval="1000"
+        style="max-width: 1450px;"
+>
+    <div class="carousel-inner rounded">
+        <div class="carousel-item active">
+            <img src="img1.jpg" class="d-block w-100" alt="Carousel Image 1" />
+        </div>
+        <div class="carousel-item">
+            <img src="img2.jpg" class="d-block w-100" alt="Carousel Image 2" />
+        </div>
+        <div class="carousel-item">
+            <img src="img.png" class="d-block w-100" alt="Carousel Image 3" />
+        </div>
+    </div>
+    <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev"
+    >
+        <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+        ></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next"
+    >
+        <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+        ></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Cakes Section -->
+<section id="cakes" class="products-section">
+    <h1 class="section-title">Cakes</h1>
+    <div class="cards-container">
+        <div class="card">
+            <a href="cake1.html">
+                <img src="img3.jpg" class="card-img-top" alt="Chocolate Cake" />
+            </a>
+        </div>
+        <div class="card">
+            <a href="cake2.html">
+                <img src="img4.jpg" class="card-img-top" alt="Strawberry Delight" />
+            </a>
+        </div>
+        <div class="card">
+            <a href="cake3.html">
+                <img src="img5.jpg" class="card-img-top" alt="Dark Forest" />
+            </a>
+        </div>
+        <div class="card">
+            <a href="cake4.html">
+                <img src="img6.jpg" class="card-img-top" alt="Red Velvet" />
+            </a>
+        </div>
+        <div class="card">
+            <a href="cake5.html">
+                <img src="img7.jpg" class="card-img-top" alt="Choco Lava" />
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Coffee Section -->
+<!-- Coffee Section -->
+<section id="coffee" class="products-section">
+    <h1 class="section-title">Coffee</h1>
+    <div class="cards-container">
+        <div class="card">
+            <a href="cof1.html">
+                <img src="cf1.jpg" class="card-img-top" alt="Espresso" />
+            </a>
+        </div>
+        <div class="card">
+            <a href="cof2html">
+                <img src="cf2.jpg" class="card-img-top" alt="Cappuccino" />
+            </a>
+        </div>
+        <div class="card">
+            <a href="cof3.html">
+                <img src="cf3.jpg" class="card-img-top" alt="Latte" />
+            </a>
+        </div>
+        <div class="card">
+            <a href="cof4.html">
+                <img src="cf4.jpg" class="card-img-top" alt="Mocha" />
+            </a>
+        </div>
+        <div class="card">
+            <a href="cof5.html">
+                <img src="cf5.jpg" class="card-img-top" alt="Americano" />
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Chocolate Section -->
+<!-- Chocolate Section -->
+<section id="chocolate" class="products-section">
+    <h1 class="section-title">Chocolate</h1>
+    <div class="cards-container">
+        <div class="card">
+            <a href="ck1.html">
+                <img src="c1.jpg" class="card-img-top" alt="Milk Chocolate" />
+            </a>
+        </div>
+        <div class="card">
+            <a href="ck2.html">
+                <img src="c2.jpg" class="card-img-top" alt="Dark Chocolate" />
+            </a>
+        </div>
+        <div class="card">
+            <a href="ck3.html">
+                <img src="c3.jpg" class="card-img-top" alt="Hazelnut Chocolate" />
+            </a>
+        </div>
+        <div class="card">
+            <a href="ck4.html">
+                <img src="c4.jpg" class="card-img-top" alt="White Chocolate" />
+            </a>
+        </div>
+        <div class="card">
+            <a href="ck5.html">
+                <img src="c5.jpg" class="card-img-top" alt="Truffle Chocolate" />
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Gifts Section -->
+<!-- Gifts Section -->
+<section id="gifts" class="products-section">
+    <h1 class="section-title">Gifts</h1>
+    <div class="cards-container">
+        <div class="card">
+            <a href="gf1.html">
+                <img src="g1.jpg" class="card-img-top" alt="Gift Box 1" />
+            </a>
+        </div>
+        <div class="card">
+            <a href="gf2.html">
+                <img src="g2.jpg" class="card-img-top" alt="Gift Box 2" />
+            </a>
+        </div>
+        <div class="card">
+            <a href=gf3.html>
+                <img src="g3.jpg" class="card-img-top" alt="Gift Box 3" />
+            </a>
+        </div>
+        <div class="card">
+            <a href="gf4.html">
+                <img src="g4.jpg" class="card-img-top" alt="Gift Box 4" />
+            </a>
+        </div>
+        <div class="card">
+            <a href="gf5.html">
+                <img src="g5.jpg" class="card-img-top" alt="Gift Box 5" />
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer style="background-color: #333; color: #fff; padding: 20px; text-align: center;">
+    <p>&copy; 2025 My Website. All rights reserved.</p>
+    <p><a href="about.html">About</a></p>
+    <p>Contact us: <a href="mailto:example@email.com" style="color: #00ffff;">example@email.com</a></p>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
